@@ -19,4 +19,4 @@ A responsive personal portfolio built with React and Vite to showcase my experie
 - Resume Download
 
 - ## 🌐 Live Demo
-https://veeresh-s-a.vercel.app/
+- https://veeresh-sa.vercel.app/
