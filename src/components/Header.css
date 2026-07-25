@@ -1,0 +1,217 @@
+/* ===================================
+   HEADER
+=================================== */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  background: #222831;
+  border-bottom: 1px solid #2b2b2b;
+}
+
+.header-container {
+  max-width: 1280px;
+  margin: auto;
+  padding: 2px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ===================================
+   LOGO
+=================================== */
+
+.header-logo h2 {
+  color: #ffffff;
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* ===================================
+   MENU
+=================================== */
+
+.header-menu {
+  display: flex;
+  align-items: center;
+  gap: 45px;
+
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.header-menu li {
+  list-style: none;
+}
+
+.header-menu a,
+.header-menu span {
+  position: relative;
+
+  cursor: pointer;
+
+  color: #ffffff;
+  text-decoration: none;
+
+  font-size: 16px;
+  font-weight: 500;
+
+  transition: 0.3s;
+}
+
+/* Hover */
+
+.header-menu a:hover,
+.header-menu span:hover {
+  color: #8b5cf6;
+}
+
+/* Underline */
+
+.header-menu a::after,
+.header-menu span::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -8px;
+
+  width: 0;
+  height: 2px;
+
+  background: #8b5cf6;
+
+  transition: width 0.1s ease-in;
+}
+
+/* Hover Underline */
+
+.header-menu a:hover::after,
+.header-menu span:hover::after {
+  width: 100%;
+}
+
+/* Active Link */
+
+.header-menu .active {
+  color: #ffffff;
+}
+
+.header-menu .active::after {
+  width: 100%;
+}
+
+/* ===================================
+   MOBILE ICON
+=================================== */
+
+.menu-icon {
+  display: none;
+
+  color: white;
+
+  font-size: 28px;
+
+  cursor: pointer;
+}
+
+/* ===================================
+   TABLET
+=================================== */
+
+@media (max-width: 992px) {
+  .header-container {
+    padding: 16px 30px;
+  }
+
+  .header-menu {
+    gap: 30px;
+  }
+}
+
+/* ===================================
+   MOBILE
+=================================== */
+
+@media (max-width: 768px) {
+  .header-container {
+    padding: 16px 20px;
+  }
+
+  .header-logo h2 {
+    font-size: 30px;
+  }
+
+  /* Hamburger */
+
+  .menu-icon {
+    display: block;
+
+    z-index: 1001;
+  }
+
+  /* Menu */
+
+  .header-menu {
+    position: fixed;
+
+    top: 65px;
+    left: -100%;
+
+    width: 100%;
+
+    height: calc(100vh - 65px);
+
+    background: #111111;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: flex-start;
+
+    align-items: center;
+
+    gap: 35px;
+
+    padding-top: 60px;
+
+    transition: left 0.35s ease;
+  }
+
+  .header-menu.active {
+    left: 0;
+  }
+
+  .header-menu li {
+    width: 100%;
+
+    text-align: center;
+  }
+
+  .header-menu a,
+  .header-menu span {
+    font-size: 20px;
+  }
+}
+
+/* ===================================
+   SMALL MOBILE
+=================================== */
+
+@media (max-width: 480px) {
+  .header-logo h2 {
+    font-size: 24px;
+  }
+
+  .header-menu a,
+  .header-menu span {
+    font-size: 18px;
+  }
+}
